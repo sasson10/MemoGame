@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Juego</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="GameObject.js"> </script>
+        <script src="MatchGame.js"> </script>        
+        <script src="game.js"> </script>        
+
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+        <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="myStyle.css">
+
+    </head>
+    <body>
+        <div>
+            <canvas id="canvas">        
+            </canvas>
+        </div>
+
+            <div data-role="popup" id="myPopup" data-overlay-theme="b" data-dismissible="false" data-transition="fade">
+                  <div data-role="header">
+                    <h1>¡Correcto!</h1>
+                  </div>
+
+                  <div data-role="main" class="ui-content">
+                    <h2>¡Bien!</h2>
+                    <img src="correcto.png" style="width:400px;height:300px;"><br><br>
+                    <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b ui-icon-back ui-btn-icon-left" data-rel="back">¡Volver a jugar!</a>
+                    <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b ui-icon-arrow-r ui-btn-icon-right" data-rel="back">¡Siguiente!</a>
+                  </div>
+
+                 <div data-role="footer">
+                    <h1>EduDown</h1>
+                  </div>
+                </div>
+
+
+
+                <div data-role="popup" id="myPopup1" data-overlay-theme="b" data-transition="fade">
+                  <div data-role="header">
+                    <h1>¡Intenta otra vez!</h1>
+                  </div>
+
+                  <div data-role="main" class="ui-content">
+                    <h2>¡Vuelve a intentarlo!</h2>
+                    <img src="regresar.png" style="width:400px;height:300px;"><br><br>
+                    <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b ui-icon-back ui-btn-icon-left" data-rel="back">¡Volver a inentar!</a>
+                  </div>
+
+                  <div data-role="footer">
+                    <h1>EduDown</h1>
+                  </div>
+                </div>
+
+                <div class="centrar">
+                  <p>
+                    <h2>Relaciona la imagen </h2>
+                  </p>
+                </div>
+
+    </body>
+</html>

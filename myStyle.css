@@ -1,0 +1,10 @@
+.buttonSize{
+	width: 25px;
+	height: 25px;
+	position: relative;
+    left: 50px;
+}
+
+.centrar{
+	margin-left: 400px;
+}
