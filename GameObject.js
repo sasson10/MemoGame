@@ -1,8 +1,15 @@
 function GameObject (object, x, y, width, height) {
 
     this.image = new Image ();
-    this.image.src = object.url;
-    this.id = object.id;
+    if (object != null){
+        this.image.src = object.url;
+        this.id = object.id;
+        this.linea = object.linea;
+    }
+    else{
+        this.image = null;
+    }
+    //console.log ("creando objeto: "+ object+" ("+x+","+y+")"+"("+width+","+height+")");
     this.x = x;
     this.y = y;
     this.width = width;
@@ -15,6 +22,18 @@ function GameObject (object, x, y, width, height) {
     var xoffset;
     var yoffset;
 
+    this.clickInside = function ( x,  y){
+        /*console.log (x + ", "+ y);
+        console.log ("-"+self.x + ", "+ self.y);
+        console.log ("<"+this.x + ", "+ this.y);
+        console.log (">"+this.width + ", "+ this.height);*/
+        if ((x >= this.x) && (x <= this.x+this.width) && 
+            (y >= this.y) && (y <= this.y+this.height)){
+            return true;
+        }
+        return false;
+    }
+
     this.setW = function (w){
         this.width = w;
         this.right = x+width;
@@ -26,11 +45,23 @@ function GameObject (object, x, y, width, height) {
     }
 
     this.draw = function(ctx) {
-        ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
+        if (this.image != null){
+            ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
+        }
+        else{
+
+            if(this.x != null){
+                ctx.beginPath(); 
+                ctx.moveTo(this.x,this.y);
+                ctx.lineTo( this.width, this.height);
+                ctx.stroke();
+                ctx.closePath();
+            }
+        }
     };
 
     this.click = function(evento) {
-        if (evento.clientX > this.x &&
+        if (    evento.clientX > this.x &&
                 evento.clientX < (this.x + this.width) &&
                 evento.clientY > this.y &&
                 evento.clientY < (this.y + this.height)

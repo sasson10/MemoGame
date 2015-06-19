@@ -2,43 +2,64 @@ $(document).ready(function() {
 
 	//alert("Bienvenido al Juego");
 
-	console.log ((3>5) || (6<10));
-
+	
     var canvas = $("#canvas")[0];
   //  var popup = $("#myPopup");
     
     imagenes=[
     	{
     		id:1,
-    		url:"VACA.png"
+    		url:"dromedario.png",
+            linea:null,
+            
     	}, 
     	{	
     		id:2,
-    		url:"GALLINA.png"
+    		url:"elefante.png",
+            linea:null,
     	},
     	{
     		id:3,
-    		url:"BORREGO.png"
+    		url:"gorilla.png",
+            linea:null,
     	},
     	{
     		id:4,
-    		url:"BORREGO.png"
+    		url:"guacamaya.png",
+            linea:null,
     	},
     	{
     		id:5,
-    		url:"BORREGO.png"
+    		url:"halcon.png",
+            linea:null,
     	},
     	{
     		id:6,
-    		url:"BORREGO.png"
+    		url:"leon.png",
+            linea:null,
     	},
+        {
+            id:7,
+            url:"lobo.png",
+            linea:null,
+            
+        }, 
+        {
+            id:8,
+            url:"mono.png",
+            linea:null,
+            
+        }, 
     	{
-    		id:7,
-    		url:"BORREGO.png"
+    		id:9,
+    		url:"panda.png",
+            linea:null,
     	}    	
     	];
+
+    lineas = [];    
     
-    juego = new MatchGame (canvas, imagenes);
+    juego = new MatchGame (canvas, imagenes, lineas);
 //    alerta = new resgisterEvents (popup);
     juego.init ();
 
